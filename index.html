@@ -25,6 +25,17 @@
   <p id="durum"></p>
 </div>
 
-<script src="panel.js"></script>
+<script>
+src="panel.js"></
+window.onerror = function (msg, url, line, col, err) {
+  alert(
+    "🚨 PANEL HATASI 🚨\n\n" +
+    "Mesaj: " + msg + "\n" +
+    "Dosya: " + url + "\n" +
+    "Satır: " + line + "\n" +
+    "Sütun: " + col
+  );
+};
+</script> 
 </body>
 </html>
