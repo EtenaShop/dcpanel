@@ -3,42 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <title>Discord Bot Panel</title>
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="panel">
-  <h1>🤖 Discord Bot Panel</h1>
+<h2>Prefix Değiştir</h2>
+<input id="prefix" placeholder="Yeni prefix">
+<button onclick="setPrefix()">Kaydet</button>
 
-  <label>Prefix</label>
-  <input id="prefix" placeholder="Örn: !" />
+<h2>Bot Restart</h2>
+<button onclick="restartBot()">Restart</button>
 
-  <label>Bot Durumu</label>
-  <select id="aktif">
-    <option value="true">Aktif</option>
-    <option value="false">Pasif</option>
-  </select>
-
-  <button onclick="kaydet()">💾 Kaydet</button>
-  <button class="restart" onclick="restart()">🔄 Botu Restart Et</button>
-
-  <p id="durum"></p>
-</div>
-
-<!-- PANEL JS -->
-<script src="panel.js"></script>
-
-<!-- HATA YAKALAYICI -->
 <script>
-window.onerror = function (msg, url, line, col) {
-  alert(
-    "🚨 PANEL HATASI 🚨\n\n" +
-    "Mesaj: " + msg + "\n" +
-    "Dosya: " + url + "\n" +
-    "Satır: " + line + "\n" +
-    "Sütun: " + col
-  );
-};
+const API = "https://maps-leaf-stopped-citizen.trycloudflare.com"; // veya kendi domainin
+
+function setPrefix() {
+  fetch(API + "/api/prefix", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      prefix: document.getElementById("prefix").value
+    })
+  })
+  .then(r => r.json())
+  .then(d => alert("Prefix değişti: " + d.prefix))
+  .catch(() => alert("Hata"));
+}
+
+function restartBot() {
+  fetch(API + "/api/restart", { method: "POST" })
+    .then(() => alert("Restart atıldı"));
+}
 </script>
 
 </body>
