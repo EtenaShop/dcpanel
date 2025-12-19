@@ -1,0 +1,54 @@
+body {
+  background: #0f0f0f;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+.panel {
+  width: 320px;
+  margin: 60px auto;
+  background: #1c1c1c;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: none;
+}
+
+button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button.restart {
+  background: #ff3b3b;
+  color: white;
+}
+
+button:not(.restart) {
+  background: #5865F2;
+  color: white;
+}
+
+#durum {
+  margin-top: 10px;
+  text-align: center;
+}
