@@ -1,5 +1,5 @@
-const API_URL = "https://qualifications-simultaneously-walter-protocol.trycloudflare.com";
-const API_KEY = "SUPER_GIZLI_KEY";
+const API_URL = "https://ricky-briefing-loc-involve.trycloudflare.com";
+const API_KEY = "123";
 
 function kaydet() {
   const prefix = document.getElementById("prefix").value;
