@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Discord Bot Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="panel">
+  <h1>🤖 Discord Bot Panel</h1>
+
+  <label>Prefix</label>
+  <input id="prefix" placeholder="Örn: !" />
+
+  <label>Bot Durumu</label>
+  <select id="aktif">
+    <option value="true">Aktif</option>
+    <option value="false">Pasif</option>
+  </select>
+
+  <button onclick="kaydet()">💾 Kaydet</button>
+  <button class="restart" onclick="restart()">🔄 Botu Restart Et</button>
+
+  <p id="durum"></p>
+</div>
+
+<script src="panel.js"></script>
+</body>
+</html>
